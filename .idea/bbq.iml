@@ -52,8 +52,6 @@
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.12.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.8.2, rbenv: 2.7.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.10.0, rbenv: 2.7.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.4.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="less (v2.6.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="less-rails (v4.0.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, rbenv: 2.7.1) [gem]" level="application" />
@@ -75,6 +73,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v6.0.2.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.3.0, rbenv: 2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-ujs (v0.1.0, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v6.0.2.2, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.1, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.4, rbenv: 2.7.1) [gem]" level="application" />
