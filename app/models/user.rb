@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :events, dependent: :destroy
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true, length: { maximum: 35 }
-  validates :email, presence: true, length: { maximum: 255 }
-  validates :email, uniqueness: true
-  validates :email, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+  has_many :events, dependent: :destroy
 end

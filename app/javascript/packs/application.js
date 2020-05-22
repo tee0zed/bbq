@@ -4,12 +4,13 @@
 // that code so it'll be compiled.
 
 require("@rails/activestorage").start()
+require("@rails/ujs").start()
 require("channels")
 require("jquery")
-require("bootstrap/dist/js/bootstrap")
-require("@rails/ujs").start()
 import 'bootstrap'
-import './src/application.scss'
+import 'popper.js'
+import './stylesheets/application.scss'
+Rails.start()
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
     else
@@ -38,6 +39,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def set_event
     @event = Event.find(params[:id])
   end

@@ -10,6 +10,7 @@ gem 'webpacker', '~> 4.0'
 gem 'twitter-bootstrap-rails'
 gem 'rails-ujs'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
