@@ -1,11 +1,32 @@
-<div class="row justify-content-center">
+<div class="row mb-5">
   <div class="col-lg-8">
-    <h3><%= @user.name %></h3>
-    <h3><%= @user.email %></h3>
-
-  <p class="buffer-top">
-    <%= link_to "Редактировать профиль", edit_user_path(@user),
-                class: 'btn btn-outline-info' %>
-  </p>
+    <div class="field mb-3">
+      <span class="text-muted">
+        Имя:
+      </span>
+      <span class="text-dark">
+        <%= @user.name %>
+      </span>
+    </div>
+    <div class="field mb-3">
+      <span class="text-muted">
+        Почта:
+      </span>
+      <span class="text-dark">
+        <%= @user.email %>
+      </span>
+    </div>
+    <p class="mb-3">
+      <%= link_to "Редактировать профиль", edit_user_path(@user), class: 'btn btn-outline-info' %>
+    </p>
   </div>
 </div>
+
+<h4>Ваши события</h4>
+  <div class="row">
+    <% if @user.events.any? %>
+    <%= render partial: 'partials/event', collection: @user.events %>
+    <% end %>
+  </div>
+
+
