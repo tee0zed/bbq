@@ -37,7 +37,7 @@
 }
 
 .thumbnail-inner {
-  padding: 20px 4px 4px;
+  padding: 20px 10px 10px;
 }
 
 .btn-style-vl {
@@ -47,4 +47,34 @@
 .btn-style-vl:hover {
   transition: 0.4s;
   background-color: #b55ea6;
+}
+
+.event-background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+.event-info {
+ color: #DADADA;
+}
+
+.event-description {
+ color: #DADADA;
+}
+
+.container {
+  min-height: 60vh !important;
 }

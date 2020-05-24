@@ -1,8 +1,11 @@
-<div class="text-center">
-  <h1><%= @user.name %></h1>
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h3><%= @user.name %></h3>
+    <h3><%= @user.email %></h3>
 
   <p class="buffer-top">
     <%= link_to "Редактировать профиль", edit_user_path(@user),
-                class: 'btn btn-default' %>
+                class: 'btn btn-outline-info' %>
   </p>
+  </div>
 </div>

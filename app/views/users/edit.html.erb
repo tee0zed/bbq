@@ -1,7 +1,16 @@
-<h1>Редактирование профиля</h1>
 
-<div class="row">
-  <div class="col-md-6 buffer-top">
-    <%= render 'form' %>
+<div class="row justify-content-center">
+  <div class="col-md-6 pt-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Редактирование профиля</h3>
+      </div>
+        <div class="panel-body">
+          <%= render 'form', user: @user %>
+        </div>
+    </div>
+    <p class="buffer-top">
+      <%= link_to "Сменить пароль", edit_user_registration_path %>
+    </p>
   </div>
 </div>

@@ -1,9 +1,10 @@
 <h1>События</h1>
 
-<div class="row buffer-bottom m-2">
+<div class="buffer-both">
+  <%= link_to 'Создать событие', new_event_path, class: 'btn btn-outline-info' %>
+</div>
+
+<div class="row buffer-bottom">
   <%= render_events %>
 </div>
 
-<div class="buffer-both">
-  <%= link_to 'Создать событие', new_event_path, class: 'btn btn-style-vl' %>
-</div>
