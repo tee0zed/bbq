@@ -68,7 +68,8 @@
 }
 
 .event-info {
- color: #DADADA;
+  color: #DADADA;
+  opacity: 0.9;
 }
 
 .event-description {
@@ -77,4 +78,18 @@
 
 .container {
   min-height: 60vh !important;
+}
+
+.alert-container {
+  position: absolute;
+  width: 100%;
+  z-index: 10000;
+}
+
+.alert {
+  opacity: 0.9;
+}
+
+.form-text {
+  width: 100%;
 }

@@ -1,6 +1,7 @@
+<div class="alert-container">
+  <%= render partial: 'devise/shared/error_messages', locals: { resource: @user } %>
+</div>
 <%= form_for @user, html: {multipart: true} do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
-
   <div class="form-group">
     <%= f.label :Имя %>
     <%= f.text_field :name, class: 'form-control' %>
