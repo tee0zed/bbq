@@ -1,6 +1,7 @@
 <div class="alert-container">
   <%= render partial: 'devise/shared/error_messages', locals: { resource: @event }  %>
 </div>
+
 <%= form_for(@event) do |f| %>
   <div class="form-group">
     <%= f.label :title %>

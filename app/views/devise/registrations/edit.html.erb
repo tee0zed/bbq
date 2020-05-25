@@ -5,29 +5,28 @@
   <div class="col-lg-6 pt-2">
     <div class="panel panel-default">
       <div class="panel-heading mb-3">
-        <h4 class="text-center">Редактирование профиля <span class="font-italic"><%= resource_name.to_s.humanize %></span></h4>
+        <h4 class="text-center">Редактирование профиля <span class="font-italic"><%= resource.name.to_s %></span></h4>
       </div>
       <div class="panel-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-        <%= f.label :email, class: 'mb-0' %><br />
+        <%= f.label :email, class: 'mb-0 mt-3' %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-text pt-2' %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.label :password, class: 'mb-0 mt-3' %> <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "new-password", class:'form-text pt-2' %>
         <% if @minimum_password_length %>
-          <br />
           <em><%= @minimum_password_length %> characters minimum</em>
         <% end %>
 
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, class: 'mb-0 mt-3' %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-text pt-2' %>
 
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password, class: 'mb-0 mt-3' %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "current-password", class:'form-text pt-2' %>
 
         <div class="actions">
