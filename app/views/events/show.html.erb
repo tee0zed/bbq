@@ -3,7 +3,7 @@
     <div class="col-lg-8">
       <div class="row">
         <%= content_tag 'div', '', class: 'event-background',
-                        style: "background-image: url(#{asset_path('event.jpeg')})" %>
+                        style: "background-image: url(#{path_to_asset('event.jpg')})" %>
         <div class="p-4">
           <div class="event-description">
             <h1><%= @event.title %></h1>
@@ -16,7 +16,7 @@
           <div class="buffer-top">
             <% if set_current_user_event.present? %>
               <%= link_to 'Изменить', edit_event_path(@event),
-                        class: 'btn btn-outline-info' %>
+                        class: 'btn btn-outline-warning' %>
             <% end %>
           </div>
         </div>

@@ -21,3 +21,13 @@ en:
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+    controllers:
+      events:
+        created: "Event created"
+        updated: "Event updated"
+        destroyed: "Event destroyed"
+      users:
+        created: "User created"
+        updated: "User updated"
+        destroyed: "User destroyed"
+

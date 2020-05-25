@@ -2,27 +2,27 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 </div>
 <div class="row justify-content-center">
-  <div class="col-lg-4 pt-2">
-    <div class="panel panel-default">
-      <div class="panel-heading">
+  <div class="col-lg-5 pt-2">
+    <div class="panel">
+      <div class="panel-title">
         <h3 class="panel-title text-center mb-3">Создать аккаунт</h3>
       </div>
       <div class="panel-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <%= f.label :email %><br />
+          <%= f.label :email, class: "mb-0 mt-2" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-text"%>
 
-          <%= f.label :password %>
+          <%= f.label :пароль, class: "mb-0 mt-2" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
 
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :подтверждение_пароля, class: "mb-0 mt-2" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
 
-          <%= f.submit "Sign up", class: 'btn btn-outline-info mt-2' %>
+          <%= f.submit "Присоединиться", class: 'btn btn-outline-info mt-3' %>
 
       <% end %>
       </div><!--panel-body-->

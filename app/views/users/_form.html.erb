@@ -1,6 +1,4 @@
-<div class="alert-container">
-  <%= render partial: 'devise/shared/error_messages', locals: { resource: @user } %>
-</div>
+
 <%= form_for @user, html: {multipart: true} do |f| %>
   <div class="form-group">
     <%= f.label :Имя %>
@@ -14,6 +12,6 @@
 
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-outline-info' %>
-    или <%= link_to 'вернуться', :back %>
+    или <%= link_to 'вернуться', root_path %>
   </div>
 <% end %>
