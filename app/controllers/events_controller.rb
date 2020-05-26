@@ -47,7 +47,7 @@ class EventsController < ApplicationController
   private
 
   def set_current_user_event
-    @event = current_user.events.where(id:params[:id]).first if current_user
+    @event = current_user.events.find(params[:id])
   end
 
   def set_event

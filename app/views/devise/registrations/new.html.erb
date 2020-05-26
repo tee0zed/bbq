@@ -10,16 +10,16 @@
       <div class="panel-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <%= f.label :email, class: "mb-0 mt-2" %><br />
+          <%= f.label :email, class: "text-muted  mb-0 mt-2" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-text"%>
 
-          <%= f.label :пароль, class: "mb-0 mt-2" %>
+          <%= f.label :пароль, class: "text-muted mb-0 mt-2" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
 
-          <%= f.label :подтверждение_пароля, class: "mb-0 mt-2" %><br />
+          <%= f.label :подтверждение_пароля, class: "text-muted mb-0 mt-2" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
 
           <%= f.submit "Присоединиться", class: 'btn btn-outline-info mt-3' %>

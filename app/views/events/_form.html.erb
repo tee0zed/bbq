@@ -1,21 +1,21 @@
 <%= form_for(@event) do |f| %>
   <div class="form-group">
-    <%= f.label :Название %>
+    <%= f.label :Название, class: "text-muted " %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :Адрес %>
+    <%= f.label :Адрес, class: 'text-muted ' %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :Время_Дата %>
+    <%= f.label :Время_Дата, class: 'text-muted ' %>
     <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
   </div>
 
   <div class="form-group">
-    <%= f.label :Описание %>
+    <%= f.label :Описание, class: 'text-muted ' %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
