@@ -9,23 +9,23 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
         <%= f.label :email, class: 'text-muted mb-0 mt-3' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-text pt-2' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control pt-2' %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
         <%= f.label :пароль, class: ' text-muted mb-0 mt-3' %> <i>(оставьте пустым, если не хотите менять.)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:'form-text pt-2' %>
+        <%= f.password_field :password, autocomplete: "new-password", class:'form-control pt-2' %>
         <% if @minimum_password_length %>
           <em><%= @minimum_password_length %> символов минимум.</em>
         <% end %>
 
         <%= f.label :подтверждение_пароля, class: 'text-muted mb-0 mt-3' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-text pt-2' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control pt-2' %>
 
         <%= f.label :текущий_пароль, class: ' text-muted  mb-0 mt-3' %> <i class="text-muted ">(нам нужен ваш текущий пароль чтобы подтвердить изменения.)</i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", class:'form-text pt-2' %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class:'form-control pt-2' %>
 
         <div class="actions mt-3">
           <%= f.submit "Подтвердить", class: 'btn btn-outline-info' %>
