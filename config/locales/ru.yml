@@ -267,7 +267,7 @@ ru:
       short: "%d %b, %H:%M"
     pm: вечера
   company: "Tee Zed"
-  appname: "SHASHLIKIFY"
+  appname: "SHASHLIKIFY!"
 
   event:
     one: '%{count} событие'
