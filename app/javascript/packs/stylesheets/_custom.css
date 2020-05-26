@@ -81,12 +81,12 @@
 
 .alert-container {
   position: absolute;
-  width: 95%;
+  width: 100%;
   z-index: 10000;
 }
 
 .alert {
-  opacity: 0.9;
+  transition: 0.3s;
 }
 
 .form-control {
@@ -112,7 +112,7 @@
 }
 
 .fade:not(.show) {
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 .footer {

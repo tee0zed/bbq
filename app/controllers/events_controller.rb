@@ -5,8 +5,6 @@ class EventsController < ApplicationController
 
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
-  helper_method :set_current_user_event
-
   def index
     @events = Event.all
   end

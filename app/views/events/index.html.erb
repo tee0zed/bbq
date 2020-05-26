@@ -1,9 +1,13 @@
-<h1>События</h1>
-
-<div class="buffer-both">
-  <%= link_to 'Создать событие', new_event_path, class: 'btn btn-outline-info' %>
+<div class="row">
+  <div class="buffer-both float-left mr-auto ml-3">
+    <h1>События</h1>
+  </div>
+  <div class="buffer-both float-right ml-auto pt-2 mr-3">
+    <%= link_to 'Создать событие', new_event_path, class: 'btn btn-outline-info' %>
+  </div>
 </div>
 
+<h5 class="text-black-50 mb-4"><%= I18n.t :event, count: @events.count %></h5>
 <div class="row">
   <%= render_events %>
 </div>

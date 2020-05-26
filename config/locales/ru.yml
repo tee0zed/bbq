@@ -266,3 +266,10 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  company: "Tee Zed"
+  appname: "SHASHLIKIFY"
+
+  event:
+    one: '%{count} событие'
+    few: '%{count} события'
+    many: '%{count} событий'
