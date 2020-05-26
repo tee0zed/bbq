@@ -1,0 +1,29 @@
+ru:
+  breadcrumbs:
+    application:
+      root: "Главная"
+    pages:
+      pages: "Pages"
+  helpers:
+    actions: "Actions"
+    links:
+      back: "Назад"
+      cancel: "Отмена"
+      confirm: "Вы уверены?"
+      destroy: "Удалить"
+      new: "Новое"
+      edit: "Редактировать"
+    titles:
+      edit: "Редактировать %{model}"
+      save: "Сохранить %{model}"
+      new: "Новая %{model}"
+      delete: "Удалить %{model}"
+    controllers:
+      events:
+        created: "Событие создано"
+        updated: "Событие обовлено"
+        destroyed: "Событие удалено"
+      users:
+        created: "Пользователь создан"
+        updated: "Профиль обновлен"
+        destroyed: "Профиль удален"
