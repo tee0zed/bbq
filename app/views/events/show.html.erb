@@ -13,14 +13,18 @@
             <p><%= @event.description %></p>
           </div>
 
-          <div class="buffer-top">
+          <div class="row">
+            <div class="col-lg-6">
             <% if current_user_can_edit?(@event) %>
               <div class="actions">
                 <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-outline-warning' %>
                 <%= link_to 'Удалить', event_path(@event),method: :delete, class: 'ml-2 btn btn-outline-danger', data: { confirm: "Удалить событие?" } %>
-                <span class="float-right pt-2 pr-3"> <%= link_to @event.user.name, user_path(@event.user), class: "text-light" %> </span>
               </div>
             <% end %>
+            </div>
+            <div class="col-lg-6">
+              <div class="float-right pt-2 pr-3"> <%= link_to @event.user.name, user_path(@event.user), class: "text-light" %> </div>
+            </div>
           </div>
         </div>
       </div>
