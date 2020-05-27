@@ -1,5 +1,10 @@
-<div class="row mb-5">
-  <div class="col-lg-8">
+<div class="row mb-3 mt-3">
+  <div class="col-lg-12">
+    <% if user_signed_in? %>
+      <p class="float-right ml-auto">
+        <%= link_to "Редактировать свой профиль", edit_user_path(@user), class: 'btn btn-outline-info mt-3' %>
+      </p>
+    <% end %>
     <div class="field mb-3">
       <span class="text-muted">
         Имя:
@@ -8,7 +13,7 @@
         <%= @user.name %>
       </span>
     </div>
-    <div class="field mb-3">
+    <div class="field">
       <span class="text-muted">
         Почта:
       </span>
@@ -16,14 +21,11 @@
         <%= @user.email %>
       </span>
     </div>
-    <p class="mb-3">
-      <%= link_to "Редактировать профиль", edit_user_path(@user), class: 'btn btn-outline-info mt-3' %>
-    </p>
   </div>
 </div>
 
-<h4>Ваши события</h4>
-  <div class="row">
+<h4 class="mb-3">Cобытия <%= @user.name %></h4>
+  <div class="row overflow-auto">
     <% if @user.events.any? %>
     <%= render partial: 'partials/event', collection: @user.events %>
     <% end %>
