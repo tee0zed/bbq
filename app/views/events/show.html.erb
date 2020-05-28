@@ -1,3 +1,6 @@
+<div class="alert-container">
+  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_comment || @event.comments.build }  %>
+</div>
 <div class="event">
   <div class="event-info row">
     <div class="col-lg-8">
@@ -12,7 +15,6 @@
                                    "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
             <p><%= @event.description %></p>
           </div>
-
           <div class="row">
             <div class="col-lg-6">
             <% if current_user_can_edit?(@event) %>
@@ -26,6 +28,16 @@
               <div class="float-right pt-2 pr-3"> <%= link_to @event.user.name, user_path(@event.user), class: "text-light" %> </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        <div class="buffer-both">
+          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <div class="row mb-3 mt-3">
   <div class="col-lg-12">
     <% if user_signed_in? %>
-      <p class="float-right ml-auto">
+      <p class="float-right ml-auto w-auto">
         <%= link_to "Редактировать свой профиль", edit_user_path(@user), class: 'btn btn-outline-info mt-3' %>
       </p>
     <% end %>
@@ -20,6 +20,9 @@
       <span class="text-dark">
         <%= @user.email %>
       </span>
+    </div>
+    <div >
+      <%= image_tag user_avatar(@user), class: 'avatar-profile' %>
     </div>
   </div>
 </div>

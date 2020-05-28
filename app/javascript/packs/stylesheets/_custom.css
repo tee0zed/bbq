@@ -124,3 +124,13 @@
   position: absolute;
   bottom: 110px;
 }
+
+.avatar-profile {
+  width: 25%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.avatar-comment {
+
+}
