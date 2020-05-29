@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :events, dependent: :destroy
   has_many :comments
+  has_many :subscriptions, dependent: :destroy
 
   before_save :set_name
 
