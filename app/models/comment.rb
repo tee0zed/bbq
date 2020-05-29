@@ -14,6 +14,8 @@ class Comment < ApplicationRecord
     end
   end
 
+  private
+
   def user_present?
     user.present?
   end
