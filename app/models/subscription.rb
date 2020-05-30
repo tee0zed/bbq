@@ -12,8 +12,6 @@ class Subscription < ActiveRecord::Base
             presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? },
             uniqueness: {scope: :event_id}, unless: :user_present?
 
-  private
-
   def user_name
     if user.present?
       user.name
@@ -29,6 +27,8 @@ class Subscription < ActiveRecord::Base
       super
     end
   end
+
+  private
 
   def user_present?
     user.present?

@@ -1,17 +1,19 @@
-<%= form_for [@event, comment] do |f| %>
-  <% unless user_signed_in? %>
+<div class="comments-form">
+  <%= form_for [@event, comment] do |f| %>
+    <% unless user_signed_in? %>
+      <div class="form-group">
+        <%= f.label :Имя, class: 'text-muted' %>
+        <%= f.text_field :user_name, class: 'form-control' %>
+      </div>
+    <% end %>
+
     <div class="form-group">
-      <%= f.label :Имя, class: 'text-muted' %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+      <%= f.label :Комментарий, class: 'text-muted' %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Отправить', class: 'btn btn-outline-info' %>
     </div>
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :Комментарий, class: 'text-muted' %>
-    <%= f.text_area :body, class: 'form-control' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Отправить', class: 'btn btn-outline-info' %>
-  </div>
-<% end %>
+</div>

@@ -15,7 +15,7 @@
                                    "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
             <p><%= @event.description %></p>
           </div>
-          <div class="row">
+          <div class="row row-event">
             <div class="col-lg-6">
             <% if current_user_can_edit?(@event) %>
               <div class="actions">
