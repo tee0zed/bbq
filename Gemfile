@@ -12,6 +12,8 @@ gem 'rails-ujs'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

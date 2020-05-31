@@ -35,16 +35,18 @@
       <div class="text-left text-muted">
         <h5>Пойдут:</h5>
         <div>
-          <p>
+          <ul class="pl-3 pt-2 pb-2">
             <%= render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription) %>
-          </p>
+          </ul>
         </div>
       </div>
       <div class="text-left text-muted overflow-auto mh-50">
-        <h5>Я пойду:</h5>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
-        </div>
+        <% unless current_user_can_edit?(@event) %>
+          <h5>Я пойду:</h5>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

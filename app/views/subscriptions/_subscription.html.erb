@@ -1,4 +1,4 @@
-<span class="subscription">
+<li class="mb-1">
   <% if subscription.user.present? %>
     <%= render partial: 'users/user', object: subscription.user %>
   <% else %>
@@ -12,4 +12,4 @@
             data: {confirm: t('helpers.controllers.subscriptions.destroy_confirm')}
         ) %>
   <% end %>
-</span>
+</li>
