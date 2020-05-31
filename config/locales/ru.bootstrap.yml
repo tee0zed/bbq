@@ -39,3 +39,7 @@ ru:
         destroyed: 'Участник отписан'
         error: 'Подписка/отписка не сработала'
         destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+    models:
+      subscriptions:
+        user_is_author: 'является создателем события'
+        email_taken: 'уже есть пользователь с таким email'

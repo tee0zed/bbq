@@ -27,10 +27,12 @@
   </div>
 </div>
 
-<h4 class="mb-3">Cобытия <%= @user.name %></h4>
+<h4 class="mb-3">Cобытия пользователя<%= @user.name %></h4>
   <div class="row">
     <% if @user.events.any? %>
     <%= render partial: 'partials/event', collection: @user.events %>
+    <% else %>
+    Пока нет ни одного события.
     <% end %>
   </div>
 
