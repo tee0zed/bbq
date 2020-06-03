@@ -34,13 +34,13 @@ class Subscription < ActiveRecord::Base
 
   def user_is_author
     if user.id == event.user_id
-      errors.add(user.name, I18n.t('helpers.models.subscriptions.user_is_author'))
+      errors.add(user.name, :subscribed)
     end
   end
 
   def email_taken
     if User.find_by(email: user_email)
-      errors.add(user_email , I18n.t('helpers.models.subscriptions.email_taken'))
+      errors.add(:user_email, :email_taken)
     end
   end
 

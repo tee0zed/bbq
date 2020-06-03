@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= f.label :avatar, class:'text-muted' %>
-    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <p><%= image_tag(@user.avatar.thumb.url, class: 'img-thumbnail') if @user.avatar? %></p>
     <%= f.file_field :avatar %>
   </div>
 

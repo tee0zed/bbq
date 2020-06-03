@@ -9,7 +9,7 @@ ru:
     attributes:
       user:
         email: 'Email'
-        name: 'name'
+        name: 'Имя'
         avatar: 'Аватарка'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
@@ -26,7 +26,18 @@ ru:
         user_email: 'Ваш email'
       photo:
         photo: 'Фотография'
+    validation:
+      error:
+        one: "%{count} ошибка"
+        few: "%{count} ошибки"
+        many: "%{count} ошибкок"
     errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              subscribed: 'уже подписан'
+              email_taken: "%{value} уже занят"
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
         restrict_dependent_destroy:
