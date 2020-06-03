@@ -1,6 +1,10 @@
 module ApplicationHelper
   def user_avatar(user)
-    asset_path('avatar.jpg')
+    if user.avatar?
+      user.avatar.url
+    else
+      asset_path('avatar.jpg')
+    end
   end
 
   def fa_icon(icon_class)

@@ -13,13 +13,13 @@
           <%= f.label :email, class: "text-muted  mb-0 mt-2" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"%>
 
-          <%= f.label :пароль, class: "text-muted mb-0 mt-2" %>
+          <%= f.label :password, class: "text-muted mb-0 mt-2" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
 
-          <%= f.label :подтверждение_пароля, class: "text-muted mb-0 mt-2" %><br />
+          <%= f.label :password_confirmation, class: "text-muted mb-0 mt-2" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
 
           <%= f.submit "Присоединиться", class: 'btn btn-outline-info mt-3' %>

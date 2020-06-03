@@ -15,13 +15,13 @@
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <%= f.label :пароль, class: ' text-muted mb-0 mt-3' %> <i>(оставьте пустым, если не хотите менять.)</i><br />
+        <%= f.label :password, class: ' text-muted mb-0 mt-3' %> <i>(оставьте пустым, если не хотите менять.)</i><br />
         <%= f.password_field :password, autocomplete: "new-password", class:'form-control pt-2' %>
         <% if @minimum_password_length %>
           <em><%= @minimum_password_length %> символов минимум.</em>
         <% end %>
 
-        <%= f.label :подтверждение_пароля, class: 'text-muted mb-0 mt-3' %><br />
+        <%= f.label :password_confirmation, class: 'text-muted mb-0 mt-3' %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control pt-2' %>
 
         <%= f.label :текущий_пароль, class: ' text-muted  mb-0 mt-3' %> <i class="text-muted ">(нам нужен ваш текущий пароль чтобы подтвердить изменения.)</i><br />

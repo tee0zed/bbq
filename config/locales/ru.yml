@@ -1,5 +1,31 @@
 ru:
   activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      subscription: 'Подписка'
+      comment: 'Комментарий'
+      photo: 'Фотография'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'name'
+        avatar: 'Аватарка'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      comment:
+        user_name: 'Ваше name'
+        body: 'Комментарий'
+      subscription:
+        user_name: 'Ваше name'
+        user_email: 'Ваш email'
+      photo:
+        photo: 'Фотография'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'

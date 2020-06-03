@@ -41,6 +41,10 @@
         </div>
       </div>
       <div class="text-left text-muted overflow-auto mh-50">
+        <div class="event-owner">
+          <h5>Зовет:</h5>
+          <p><%= render partial: 'users/user', object: @event.user %></p>
+        </div>
         <% unless current_user_can_edit?(@event) %>
           <h5>Я пойду:</h5>
           <div>
