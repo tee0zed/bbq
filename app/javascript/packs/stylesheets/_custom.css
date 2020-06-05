@@ -20,6 +20,10 @@
   border-radius: 50%;
 }
 
+.img-icon-small {
+  height: 25px;
+}
+
 /* Thumbnails for events/index */
 .thumbnail {
   position: relative;
@@ -77,8 +81,25 @@
   height: 270px;
 }
 
-.event-description {
- color: #DADADA;
+.event-discription {
+  color: #FFFFFF;
+  text-shadow:
+    0   -1px 0   #000000,
+    0   -1px 0   #000000,
+    -0    1px 0   #000000,
+    0    1px 0   #000000,
+    -1px -0   0   #000000,
+    1px -0   0   #000000,
+    -1px  0   0   #000000,
+    1px  0   0   #000000,
+    -1px -1px 0   #000000,
+    1px -1px 0   #000000,
+    -1px  1px 0   #000000,
+    1px  1px 0   #000000,
+    -1px -1px 0   #000000,
+    1px -1px 0   #000000,
+    -1px  1px 0   #000000,
+    1px  1px 0   #000000;
 }
 
 .app-col {
@@ -140,7 +161,7 @@
 }
 
 .event-comments {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 40px;
 }
 
@@ -171,4 +192,32 @@
 
 .event-owner {
 
+}
+
+.event-photos {
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+
+.event-photos-gallery {
+  display: flex;
+}
+
+.photo-thumb {
+}
+
+.subs:hover {
+  transition: 0.4s;
+  color: #2E2F30;
+  cursor: pointer;
+}
+
+.subs {
+  transition: 0.4s;
+}
+
+#subscribe-form {
+  padding-left: 20px;
+  padding-right: 10px;
 }

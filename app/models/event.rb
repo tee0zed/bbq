@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
   has_many :subscribers, through: :subscriptions, source: :user
+  has_many :photos
 
   validates :title,
             presence: true,
@@ -16,4 +17,8 @@ class Event < ApplicationRecord
   validates :address,
             presence: true,
             length: { maximum: 150 }
+
+  def visitors
+    (subscribers + [user]).uniq
+  end
 end

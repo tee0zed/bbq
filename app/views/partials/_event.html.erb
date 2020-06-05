@@ -2,11 +2,11 @@
   <div class="thumbnail">
 
     <%= content_tag 'div', '', class: 'event-background',
-                    style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
+                    style: "background-image: url(#{event_photo(event)})" %>
 
     <div class="thumbnail-inner event-info-inner">
       <div class="caption">
-        <div class="event-description">
+        <div class="event-discription">
           <h3><%= link_to event.title, event_path(event), class: 'text-warning' %></h3>
           <h4><small><%= event.datetime %></small></h4>
           <div class="pt-2 pb-2 overflow-hidden"><%= event.address %>

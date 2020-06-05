@@ -1,15 +1,15 @@
 <div class="alert-container">
-  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_comment || @event.comments.build }  %>
-  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_subscription || @event.subscriptions.build }  %>
+  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_subscription || @event.subscriptions.build } %>
+  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_photo || @event.photos.build } %>
+  <%= render partial: 'devise/shared/error_messages', locals: { resource: @new_comment || @event.comments.build } %>
 </div>
-<div class="event">
   <div class="event-info row">
-    <div class="col-lg-8">
+    <div class="col-lg-7">
       <div class="row">
         <%= content_tag 'div', '', class: 'event-background event-card',
-                        style: "background-image: url(#{path_to_asset('event.jpg')})" %>
+                        style: "background-image: url(#{event_photo(@event)})" %>
         <div class="p-4 w-100">
-          <div class="event-description">
+          <div class="event-discription">
             <h1><%= @event.title %></h1>
             <h3><%= @event.datetime %></h3>
             <h3><small><%= link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
@@ -24,14 +24,14 @@
               </div>
             <% end %>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 event-discription">
               <div class="float-right pt-2 pr-3"> <%= link_to @event.user.name, user_path(@event.user), class: "text-light" %> </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="ml-5 col-lg-3">
+    <div class="ml-5 col-lg-4">
       <div class="text-left text-muted">
         <h5>Пойдут:</h5>
         <div>
@@ -46,8 +46,8 @@
           <p><%= render partial: 'users/user', object: @event.user %></p>
         </div>
         <% unless current_user_can_edit?(@event) %>
-          <h5>Я пойду:</h5>
-          <div>
+          <h5 id="subscribe" class="btn btn-outline-secondary">Я пойду!</h5>
+          <div id="subscribe-form">
             <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
           </div>
         <% end %>
@@ -56,8 +56,23 @@
   </div>
   <div class="row">
     <div class="col-md-8">
+      <div class="event-photos">
+        <div id="photos" class="btn btn-outline-secondary">
+          Фотогалерея
+        </div>
+        <div class="gallery">
+          <div class="event-photos-gallery">
+            <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo).first(5) %>
+          </div>
+          <% if user_signed_in? %>
+          <div class="mt-5">
+            <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
+          </div>
+          <% end %>
+        </div>
+      </div>
       <div class="event-comments buffer-top">
-          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+          <%= render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build } %>
         <div class="buffer-both">
           <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
         </div>

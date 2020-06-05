@@ -1,7 +1,7 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
 
   if Rails.env.production?
     storage :fog
@@ -23,21 +23,23 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  process resize_to_fit: [800, 800]
+
   # Process files as they are uploaded:
-
-  process resize_to_fill: [400, 400]
-
+  # process scale: [200, 300]
+  #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
   version :thumb do
-   process resize_to_fit: [100, 100]
+    process resize_to_fit: [100, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
+
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
