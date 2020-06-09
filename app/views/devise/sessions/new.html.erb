@@ -20,6 +20,12 @@
             </div>
           <% end %>
 
+          <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <div class="mt-2 mb-2">
+             <%= link_to 'Забыли пароль?', new_password_path(resource_name) %>
+            </div>
+          <% end %>
+
           <div class="actions">
             <%= f.submit "Войти", class: 'btn btn-outline-info mt-1' %>
           </div>

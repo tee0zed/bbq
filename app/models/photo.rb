@@ -4,7 +4,8 @@ class Photo < ApplicationRecord
 
   validates :user, presence: true
   validates :event, presence: true
-  validates :discription, length: { maximum: 70 }
+  validates :discription, length: { maximum: 70 },
+            presence: true
 
   mount_uploader :photo, PhotoUploader
 

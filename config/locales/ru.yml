@@ -1,4 +1,19 @@
 ru:
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
   activerecord:
     models:
       user: 'Пользователь'
@@ -19,13 +34,17 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
       comment:
-        user_name: 'Ваше name'
+        comment: 'Комментарий'
+        user_name: 'Ваше имя'
         body: 'Комментарий'
       subscription:
-        user_name: 'Ваше name'
+        user_name: 'Ваш юзернейм'
         user_email: 'Ваш email'
+        name: 'Имя'
+        email: 'Email'
       photo:
         photo: 'Фотография'
+        discription: 'Описание'
     validation:
       error:
         one: "%{count} ошибка"

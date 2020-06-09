@@ -9,12 +9,15 @@ class PhotosController < ApplicationController
       @new_photo.user = current_user
 
       if @new_photo.save
-        redirect_to @event, notice: I18n.t('helpers.controllers.photos.created')
+        flash[:notice] = I18n.t('helpers.controllers.photos.created')
+        redirect_to @event
       else
-        render 'events/show', alert: I18n.t('helpers.controllers.photos.error')
+        flash.now[:alert] = @new_photo.errors.full_messages
+        render 'events/show'
       end
     else
-      render 'events/show', alert: I18n.t('helpers.controllers.photos.not_signed_in')
+      flash[:alert] = I18n.t('helpers.controllers.photos.not_signed_in')
+      render 'events/show'
     end
   end
 

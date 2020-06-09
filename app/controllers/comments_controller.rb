@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
+      # notify_subscribers(@event, @new_comment)
+
       redirect_to @event, notice: I18n.t('helpers.controllers.comments.created')
     else
+      flash.now[:alert] = @new_comment.errors.full_messages
       render 'events/show', alert: I18n.t('helpers.controllers.comments.error')
     end
   end
@@ -26,6 +29,17 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def notify_subscribers(event, comment)
+    author_email = comment.user ? comment.user.email : nil
+
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    all_emails.delete(author_email)
+
+    all_emails.each do |mail|
+      EventMailer.comment(event, comment, mail).deliver_now
+    end
+  end
 
   def set_event
     @event = Event.find(params[:event_id])

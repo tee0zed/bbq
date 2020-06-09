@@ -54,6 +54,7 @@ ru:
       expired: "устарела. Пожалуйста, запросите новую"
       not_found: "не найдена"
       not_locked: "не заблокирована"
+      extension_whitelist_error: ": это не картинка!"
       not_saved:
         one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"

@@ -32,14 +32,27 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    user_name: 'shashlikify', # не используйте для тестов свои реальные ящики
+    password: 'Menalik678',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  config.active_support.delivery_method = :smtp
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.perform_deliveries = true
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load

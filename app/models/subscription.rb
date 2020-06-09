@@ -1,5 +1,5 @@
 class Subscription < ActiveRecord::Base
-  EMAIL_REGEXP =  /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+  EMAIL_REGEXP = /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
 
   belongs_to :event
   belongs_to :user, optional: true
