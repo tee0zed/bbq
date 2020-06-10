@@ -12,7 +12,7 @@
 
           <%= f.label :password, class: "text-muted mb-0 mt-2" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="text-muted">(<%= @minimum_password_length %> символов минимум)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
 

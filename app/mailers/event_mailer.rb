@@ -10,13 +10,17 @@ class EventMailer < ApplicationMailer
   def comment(event, comment, email)
     @comment = comment
     @event = event
+    @mail = email
+    @name = comment.user_name
 
     mail to: email, subject: "Новый комментарий @ #{event.title}"
   end
 
-  def photo
-    @greeting = "Hi"
+  def photo(event, photo, email)
+    @photo = photo
+    @email = email
+    @event = event
 
-    mail to: "to@example.org"
+    mail to: email, subject: "Новое фото @ #{event.title}"
   end
 end
