@@ -53,10 +53,6 @@
   padding: 20px 10px 10px;
 }
 
-.event-card {
-  height: auto;
-}
-
 .event-background {
   position: absolute;
   width: 100%;
@@ -77,6 +73,10 @@
   color: #DADADA;
   opacity: 0.9;
   height: auto;
+}
+
+.event-card {
+  height: 100%;
 }
 
 .event-discription {

@@ -5,7 +5,7 @@
 <hr/>
 
 <%= t '.event' %>
-<h3><%= @event.title %></h3>
+<%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
 
 <%= t '.datetime' %>
 <h4><%= l @event.datetime %></h4>

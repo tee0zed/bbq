@@ -8,6 +8,6 @@ Email: <%=  @email %>
 <%= @photo.photo.url %>
 
 Описание: <%= @photo.discription %>
-Событие: <%= @event.title %>
+Событие: <%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
 Состоится: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>
