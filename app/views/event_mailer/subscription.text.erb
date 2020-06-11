@@ -6,6 +6,6 @@ Email: <%=  @email %>
 
 ----------------------
 
-Событие: <%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
+Событие:  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
 Состоится: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>

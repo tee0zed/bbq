@@ -4,11 +4,17 @@
 
 <hr/>
 
-<%= t '.event' %>
-<%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
+<div>
+  <%= t '.event' %>
+  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
+</div>
 
-<%= t '.datetime' %>
-<h4><%= l @event.datetime %></h4>
+<div>
+  <%= t '.datetime' %>
+  <h4><%= l @event.datetime %></h4>
+</div>
 
-<%= t '.owner' %>
-<h4><%= @event.user.name %></h4>
+<div>
+  <%= t '.owner' %>
+  <h4><%= @event.user.name %></h4>
+</div>

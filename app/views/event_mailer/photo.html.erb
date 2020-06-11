@@ -1,16 +1,24 @@
 <h1><%= t '.title' %></h1>
 <p><%= t '.name' %>: <strong><%= @name %></strong></p>
-<p><%= t '.email' %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
+<p><%= t '.email' %>:  <%= @email %>
 <hr/>
 
-<%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
+<div>
+  <%= t '.event' %>
+  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
+</div>
 
-<%= t '.photo' %>
-<img src="<%= @photo.photo.url %>">
-<h5><%= @photo.discription %></h5>
+<div>
+  <%= t '.photo' %>
+  <h4><%= link_to @photo.discription, @photo.photo.url %></h4>
+</div>
 
-<%= t '.author' %>
-<h4><%= l @event.datetime %></h4>
+<div>
+  <%= t '.author' %>
+  <h4><%= l @event.datetime %></h4>
+</div>
 
-<%= t '.owner' %>
-<h4><%= @event.user.name %></h4>
+<div>
+  <%= t '.owner' %>
+  <h4><%= @event.user.name %></h4>
+</div>

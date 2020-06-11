@@ -37,12 +37,6 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: '587',
-    user_name: 'shashlikify', # не используйте для тестов свои реальные ящики
-    password: 'Menalik678',
-    authentication: 'plain',
-    enable_starttls_auto: true
   }
 
   config.active_support.delivery_method = :smtp

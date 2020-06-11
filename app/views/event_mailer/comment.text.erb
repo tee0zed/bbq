@@ -6,6 +6,6 @@
 <%= t '.author' %>: <%= @comment.user_name %>
 
 --------------------------------
-<%= t '.event' %>: <%= link to @event.title, 'shashlikify.herokuapp.com' + events_path(@enent) %>
+<%= t '.event' %>: <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
 <%= t '.datetime' %>: <%= l @event.datetime %>
 <%= t '.owner' %>: <%= @event.user.name %>
