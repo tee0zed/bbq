@@ -1,5 +1,5 @@
 <%= form_for [@event, subscription] do |f| %>
-  <% unless user_signed_in? %>
+  <% if !user_signed_in? %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :user_name, class: 'form-control' %>
@@ -9,9 +9,11 @@
       <%= f.label :email %>
       <%= f.text_field :user_email, class: 'form-control' %>
     </div>
-  <% end %>
-
+  <% elsif !current_user_sub?(@event) %>
   <div class="actions">
     <%= f.submit 'Подписаться', class: 'btn btn-outline-info' %>
   </div>
+  <% else %>
+    <h5>Вы идете на это событие.</h5>
+  <% end %>
 <% end %>

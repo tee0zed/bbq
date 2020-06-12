@@ -5,7 +5,7 @@
 Email: <%=  @email %>
 
 ----------------------
-<%= @photo.photo.url %>
+<p><%= link_to image_tag(@photo.photo.thumb.url), event_url(@event) %></p>
 
 Описание: <%= @photo.discription %>
 Событие:  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>

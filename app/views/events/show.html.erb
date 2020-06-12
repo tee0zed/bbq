@@ -53,12 +53,16 @@
   </div>
   <div class="ml-5 col-lg-4">
     <div class="text-left text-muted">
+      <% if @event.subscriptions.any? %>
       <h5>Пойдут:</h5>
       <div>
         <ul class="pl-3 pt-2 pb-2">
           <%= render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription) %>
         </ul>
       </div>
+      <% else %>
+      <h5>Пока ни один человек не подписался на событие.</h5>
+      <% end %>
     </div>
     <div class="text-left text-muted overflow-auto mh-50">
       <div class="event-owner">
@@ -67,7 +71,7 @@
       </div>
       <% unless current_user_can_edit?(@event) %>
         <h5>Я пойду:</h5>
-        <div>
+        <div class="subscribe-form">
           <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
         </div>
       <% end %>

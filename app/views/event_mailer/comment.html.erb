@@ -6,7 +6,7 @@
 
 <div>
   <%= t '.event' %>
-  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
+  <h4><%= link_to @event.title, event_url(@event) %></h4>
 </div>
 
 <div>
