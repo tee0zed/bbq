@@ -17,6 +17,7 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'babosa'
 
+
 group :development, :test do
   gem "letter_opener"
   gem 'sqlite3', '~> 1.4'

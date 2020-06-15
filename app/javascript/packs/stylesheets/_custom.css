@@ -137,7 +137,7 @@
 }
 
 .fade:not(.show) {
-  opacity: 0.95;
+  opacity: 0.95 !important;
 }
 
 .footer {
@@ -198,10 +198,6 @@
 }
 
 
-.event-photos-gallery {
-  display: flex;
-}
-
 .photo-thumb {
 }
 
@@ -229,4 +225,17 @@
   width: 100%;
   height: 300px;
   margin-top: 20px;
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+.event-photos-gallery {
+  /*display: flex;*/
+  /*flex-direction: row;*/
+}
+
+.img-small {
+  box-shadow: 0 10px 10px -7px rgba(0, 0, 0, 0.3);
 }

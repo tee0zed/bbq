@@ -1,12 +1,18 @@
-<%# Паршал для вывода отдельной фотографии %>
-<div class="event-photo ml-3 buffer-both text-center float-left">
-  <div>
-    <%= image_tag photo.photo.thumb.url, class:'img-thumbnail' %>
-  </div>
-  <div class="text-muted">
-    <%= link_to photo.discription, photo.photo.url %>
-  </div>
-  <div>
-    <%= render partial: 'users/user', object: photo.user %>
-  </div>
+ <% if photo.user.present? %>
+  <% user = render partial: 'users/user', object: photo.user %>
+ <% else %>
+  <% user = '<i>Удаленный пользователь</i>' %>
+ <% end %>
+
+ <% title = "Добавил #{user}" %>
+
+ <% if current_user_can_edit?(photo) %>
+  <% title += ' ' %>
+  <% title += link_to fa_icon('trash'), event_photo_path(photo.event, photo),
+  method: :delete, data: { confirm: 'Вы уверены, что хотите удалить фотку?' } %>
+ <% end %>
+
+<div  class="img-small ml-3 mt-5 mb-5 img-thumbnail">
+  <%= link_to image_tag(photo.photo.thumb.url, class: 'img-small'), photo.photo.url,
+             data: { lightbox: "gallery-#{photo.event.id}", title: title + "\n#{photo.discription}" }%>
 </div>

@@ -6,20 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "SHASHLIKIFY!" %></title>
     <%= csrf_meta_tags %>
-
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag 'application', media: 'all' %>
-
     <%= javascript_pack_tag 'application' %>
 
+    <% if javascript_exists?("#{params[:controller]}_#{params[:action]}") %>
+      <%= javascript_include_tag "https://api-maps.yandex.ru/2.1?apikey=#{Rails.application.credentials.yandex[:api_key]}&load=package.full&lang=ru_RU" %>
+      <%= javascript_pack_tag "#{params[:controller]}_#{params[:action]}" %>
+    <% end %>
+
     <%= favicon_link_tag 'fav.png' %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
-
-    <script src="https://api-maps.yandex.ru/2.1?apikey=<%= Rails.application.credentials.yandex[:api_key] %>&load=package.full&lang=ru_RU"></script>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' %>
+    <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js' %>
   </head>
   <body>
 
