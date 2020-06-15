@@ -15,6 +15,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
+gem 'babosa'
 
 group :development, :test do
   gem "letter_opener"

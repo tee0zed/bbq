@@ -23,13 +23,16 @@
         </div>
       </div>
     </div>
-    <div class="event-photos">
+    <div class="event-misc">
       <div id="photos" class="btn btn-outline-secondary">
         Фотогалерея
       </div>
+      <div id="map" class="float-right btn btn-outline-success">
+        Карта события
+      </div>
       <div class="gallery">
         <div class="event-photos-gallery">
-          <% if @event.photos.any? %>
+          <% if @event.photos.except(@new_photo).any? %>
             <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo).sample(5) %>
           <% else %>
             <div class="mt-3 mb-3">
@@ -43,6 +46,8 @@
           </div>
         <% end %>
       </div>
+      <div id="ymaps" data-address="<%= @event.address %>" class="map-container img-thumbnail">
+      </div>
     </div>
     <div class="event-comments buffer-top">
       <%= render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build } %>
@@ -53,15 +58,13 @@
   </div>
   <div class="ml-5 col-lg-4">
     <div class="text-left text-muted">
-      <% if @event.subscriptions.any? %>
+      <% if @event.subscriptions.except(@new_subscription).any? %>
       <h5>Пойдут:</h5>
-      <div>
+      <div class="subscribers">
         <ul class="pl-3 pt-2 pb-2">
           <%= render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription) %>
         </ul>
       </div>
-      <% else %>
-      <h5>Пока ни один человек не подписался на событие.</h5>
       <% end %>
     </div>
     <div class="text-left text-muted overflow-auto mh-50">

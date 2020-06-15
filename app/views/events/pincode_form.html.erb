@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-lg-5 pt-2">
+    <div class="panel  ">
+      <div class="panel-title">
+        <h3 class="panel-title text-center">Доступ по пин-коду</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag('', method: 'post') do |f| %>
+        <div class="form-group">
+          <%= label 'Пин-код', :pincode, class: "text-muted mt-2 mb-0"  %>
+          <%= text_field_tag :pincode, params[:pincode], class: 'form-control' %>
+        </div>
+
+        <div class="actions">
+          <%= submit_tag 'Впустите меня', class: 'btn btn-outline-info mt-1' %>
+        </div>
+        <% end %>
+
+        <div class="mt-2 mb-2">
+          <%= link_to 'На главную', events_path %>
+        </div>
+      </div><!--panel-->
+    </div>
+  </div>
+</div>

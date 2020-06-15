@@ -19,6 +19,11 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :Pincode, class: 'text-muted ' %> <em class="text-muted"> (можете оставить это поле пустым)</em>
+    <%= f.text_field :pincode, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-outline-info' %>
     или <%= link_to 'вернуться', :back %>

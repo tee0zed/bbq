@@ -9,7 +9,8 @@
       <%= f.label :email %>
       <%= f.text_field :user_email, class: 'form-control' %>
     </div>
-  <% elsif !current_user_sub?(@event) %>
+  <% end %>
+  <% if !current_user_sub?(@event) %>
   <div class="actions">
     <%= f.submit 'Подписаться', class: 'btn btn-outline-info' %>
   </div>
