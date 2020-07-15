@@ -37,5 +37,9 @@ yarn-debug.log*
 .idea
 
 /config/credentials/development.key
-
+/config/database.ymlgit
 /config/credentials/production.key
+
+/config/credentials/developement.key
+
+/config/credentials/heroku.key
