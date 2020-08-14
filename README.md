@@ -20,3 +20,7 @@
 ## Heroku 
 
 https://shashlikify.herokuapp.com/
+
+## Web
+
+http://www.shashlikify.fun
