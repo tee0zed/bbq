@@ -7,5 +7,5 @@ Email: <%=  @email %>
 ----------------------
 
 Событие:  <h4><%= link_to @event.title, event_url(@event) %></h4>
-Состоится: <%= l @event.datetime %>
+Дата: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>

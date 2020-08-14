@@ -22,6 +22,8 @@ en:
       new: "New %{model}"
       delete: "Delete %{model}"
     controllers:
+      comments:
+        name: "Name"
       events:
         created: "Event created"
         updated: "Event updated"

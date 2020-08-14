@@ -9,5 +9,5 @@ Email: <%=  @email %>
 
 Описание: <%= @photo.discription %>
 Событие:  <h4><%= link_to @event.title, "#{root_url}" + "events/#{@event.id}" %></h4>
-Состоится: <%= l @event.datetime %>
+Дата: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>
