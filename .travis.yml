@@ -1,0 +1,11 @@
+language: ruby
+  - 2.7.1
+cache:
+  - bundler
+  - yarn
+services:
+  - sqlite3
+before_script:
+  - bundle install 
+  - yarn install 
+  - bundle exec rake db:migrate
